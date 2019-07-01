@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  twitter
 //
-//  Created by sroman98 on 7/1/19.
-//  Copyright © 2019 sroman98. All rights reserved.
+//  Created by emersonmalca on 5/28/18.
+//  Copyright © 2018 Emerson Malca. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "APIManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    if ([[APIManager shared] isAuthorized]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"TweetsNavigationController"];
+        self.window.rootViewController = navigationController;
+    }
+    
     return YES;
 }
 

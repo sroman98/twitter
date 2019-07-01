@@ -2,8 +2,8 @@
 //  main.m
 //  twitter
 //
-//  Created by sroman98 on 7/1/19.
-//  Copyright © 2019 sroman98. All rights reserved.
+//  Created by emersonmalca on 5/28/18.
+//  Copyright © 2018 Emerson Malca. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

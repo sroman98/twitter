@@ -18,6 +18,7 @@
 		6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790520BCC0380085BC29 /* LoginViewController.m */; };
 		6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790820BCC04D0085BC29 /* TimelineViewController.m */; };
 		7B1E715922CAC9F200534F7B /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E715822CAC9F200534F7B /* User.m */; };
+		7B1E715C22CACAEF00534F7B /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E715B22CACAEF00534F7B /* Tweet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		75895B6507775E8AFBEEA2D9 /* Pods-twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-twitter/Pods-twitter.debug.xcconfig"; sourceTree = "<group>"; };
 		7B1E715722CAC9F200534F7B /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		7B1E715822CAC9F200534F7B /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7B1E715A22CACAEF00534F7B /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		7B1E715B22CACAEF00534F7B /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 			children = (
 				7B1E715722CAC9F200534F7B /* User.h */,
 				7B1E715822CAC9F200534F7B /* User.m */,
+				7B1E715A22CACAEF00534F7B /* Tweet.h */,
+				7B1E715B22CACAEF00534F7B /* Tweet.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				7B1E715922CAC9F200534F7B /* User.m in Sources */,
 				6AD278E820BC4B970085BC29 /* main.m in Sources */,
+				7B1E715C22CACAEF00534F7B /* Tweet.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
 				6AD278DA20BC4B950085BC29 /* AppDelegate.m in Sources */,
 				6AD278F620BCB68B0085BC29 /* APIManager.m in Sources */,

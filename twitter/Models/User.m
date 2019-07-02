@@ -17,6 +17,9 @@
         self.screenName = dictionary[@"screen_name"];
         
         // Initialize any other properties
+        // Init image Url
+        NSString *urlString = dictionary[@"profile_image_url_https"];
+        self.profileImageURL = [NSURL URLWithString:urlString];
     }
     return self;
 }

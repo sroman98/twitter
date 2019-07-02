@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @interface User : NSObject
 
 // TODO: Add properties
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *screenName;
+@property (strong, nonatomic) NSURL *profileImageURL;
 
 // TODO: Create initializer
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;

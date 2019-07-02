@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *likeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *likeLabel; //
 
+@property (strong, nonatomic) Tweet *tweet;
+
 - (void)configureCell:(Tweet *)tweet;
 
 @end

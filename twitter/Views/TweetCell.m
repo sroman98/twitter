@@ -23,6 +23,8 @@
 }
 
 - (void)configureCell:(Tweet*)tweet {
+    self.tweet = tweet;
+    
     self.tweetTextLabel.text = tweet.text;
     self.createdAtLabel.text = tweet.createdAtString;
     self.retweetLabel.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];

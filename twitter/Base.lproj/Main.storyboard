@@ -225,12 +225,12 @@
                     <navigationItem key="navigationItem" id="Av2-ct-MwK">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="close-icon" id="I25-zt-ex1">
                             <connections>
-                                <action selector="close:" destination="MKh-KR-BRo" id="T1b-5B-2al"/>
+                                <action selector="tapClose:" destination="MKh-KR-BRo" id="dq6-By-YhU"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Tweet" id="hdy-Ws-1Pk">
                             <connections>
-                                <action selector="tweet:" destination="MKh-KR-BRo" id="rFa-em-Bsq"/>
+                                <action selector="tapTweet:" destination="MKh-KR-BRo" id="Urw-1q-AlN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

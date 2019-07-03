@@ -38,14 +38,16 @@
 
 - (IBAction)tapTweet:(UIBarButtonItem *)sender {
     NSString *tweetText = self.tweetTextView.text;
-    [[APIManager shared] postStatusWithText:tweetText completion:^(Tweet *tweetAPI, NSError *error) {
-        if (tweetAPI) {
-            NSLog(@"😎😎😎 Successfully tweeted");
-            
-            [self dismissViewControllerAnimated:true completion:nil];
-        } else {
-            NSLog(@"😫😫😫 Error tweeting: %@", error.localizedDescription);
+    
+    [[APIManager shared]postStatusWithText:tweetText completion:^(Tweet *tweet, NSError *error) {
+        if(error){
+            NSLog(@"Error composing Tweet: %@", error.localizedDescription);
         }
+        else{
+            [self.delegate didTweet:tweet];
+            NSLog(@"Compose Tweet Success!");
+        }
+        [self dismissViewControllerAnimated:true completion:nil];
     }];
 }
 

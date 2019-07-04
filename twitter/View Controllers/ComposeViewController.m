@@ -9,9 +9,12 @@
 #import "ComposeViewController.h"
 #import "APIManager.h"
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
+
+@property (strong, nonatomic) NSString *placeholderText;
 
 @end
 
@@ -20,6 +23,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tweetTextView.delegate = self;
+    
+    self.placeholderText = @"What's happening?";
+    
+    self.tweetTextView.text = self.placeholderText;
+    self.tweetTextView.textColor = [UIColor lightGrayColor];
 }
 
 /*
@@ -49,6 +59,41 @@
         }
         [self dismissViewControllerAnimated:true completion:nil];
     }];
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    // Set the max character limit
+    unsigned long characterLimit = 140;
+    
+    // TODO: Check the proposed new text character count
+    // Construct what the new text would be if we allowed the user's latest edit
+    NSString *newText = [self.tweetTextView.text stringByReplacingCharactersInRange:range withString:text];
+    
+    // TODO: Update Character Count Label
+    int charactersLeft = (int)characterLimit - (int)newText.length;
+    if(newText.length <= characterLimit) {
+        self.countLabel.text = [NSString stringWithFormat:@"%d", charactersLeft];
+        // Allow or disallow the new text
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:self.placeholderText]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = self.placeholderText;
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
 }
 
 @end

@@ -222,15 +222,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Tuitea mil" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3pT-BF-TZF">
-                                <rect key="frame" x="0.0" y="64" width="375" height="176"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3pT-BF-TZF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="XiV-SF-SpZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amv-qz-1Lm">
+                                <rect key="frame" x="331" y="234" width="24" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Amv-qz-1Lm" firstAttribute="top" secondItem="3pT-BF-TZF" secondAttribute="bottom" id="JXf-LI-Xmn"/>
+                            <constraint firstItem="3pT-BF-TZF" firstAttribute="top" secondItem="qnA-ZU-lAd" secondAttribute="top" id="Jjb-36-QZj"/>
+                            <constraint firstItem="3pT-BF-TZF" firstAttribute="leading" secondItem="qnA-ZU-lAd" secondAttribute="leading" id="atf-VU-NCx"/>
+                            <constraint firstAttribute="trailing" secondItem="Amv-qz-1Lm" secondAttribute="trailing" constant="20" id="tkF-r5-Bee"/>
+                            <constraint firstItem="3pT-BF-TZF" firstAttribute="trailing" secondItem="qnA-ZU-lAd" secondAttribute="trailing" id="umv-b6-Ura"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qnA-ZU-lAd"/>
                     </view>
                     <navigationItem key="navigationItem" id="Av2-ct-MwK">
@@ -246,6 +261,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="countLabel" destination="Amv-qz-1Lm" id="eVI-0Z-z7g"/>
                         <outlet property="tweetTextView" destination="3pT-BF-TZF" id="1Dy-PS-ppp"/>
                     </connections>
                 </viewController>

@@ -28,7 +28,17 @@
     
     self.tweetTextLabel.text = tweet.text;
     self.createdAtLabel.text = tweet.createdAtString;
+    if(tweet.retweeted) {
+        [self.retweetButton setSelected:YES];
+    } else {
+        [self.retweetButton setSelected:NO];
+    }
     self.retweetLabel.text = [NSString stringWithFormat:@"%d", tweet.retweetCount];
+    if(tweet.favorited) {
+        [self.likeButton setSelected:YES];
+    } else {
+        [self.likeButton setSelected:NO];
+    }
     self.likeLabel.text = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
     
     User *user = tweet.user;

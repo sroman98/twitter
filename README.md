@@ -59,7 +59,7 @@ GIF created with [RecordIt](http://www.recordit.co).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I like this kind of tutorials more than videos. Thanks.
 
 ## Credits
 

@@ -14,12 +14,13 @@
 
 + (instancetype)shared;
 
-- (void)getHomeTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion;
-
 - (void)postStatusWithText:(NSString *)text completion:(void (^)(Tweet *, NSError *))completion;
 
 - (void)favorite:(Tweet *)tweet do:(NSString *)action completion:(void (^)(Tweet *, NSError *))completion;
-
 - (void)retweet:(Tweet *)tweet do:(NSString *)action completion:(void (^)(Tweet *, NSError *))completion;
+
+- (void)getHomeTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion;
+- (void)getUsernameWithCompletion:(void(^)(NSString *username, NSError *error))completion;
+- (void)getUserTimelineWithUsername:(NSString*)username withCompletion:(void(^)(NSArray *tweets, NSError *error))completion;
 
 @end
